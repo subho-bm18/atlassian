@@ -1,0 +1,91 @@
+{
+  "info": {
+    "name": "Tagging Service API - Testable",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Tag to Content",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"example\",\n  \"product_type\": \"jira\"\n}"
+        },
+        "url": {
+          "raw": "https://postman-echo.com/post",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["post"]
+        }
+      }
+    },
+    {
+      "name": "Get Tags for Content",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/get?content_id=content123",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["get"],
+          "query": [
+            {
+              "key": "content_id",
+              "value": "content123"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Remove Tag from Content",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/delete?content_id=content123&tag=example",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["delete"],
+          "query": [
+            {
+              "key": "content_id",
+              "value": "content123"
+            },
+            {
+              "key": "tag",
+              "value": "example"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Search Tags Globally",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://postman-echo.com/get?tag=example",
+          "protocol": "https",
+          "host": ["postman-echo", "com"],
+          "path": ["get"],
+          "query": [
+            {
+              "key": "tag",
+              "value": "example"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
